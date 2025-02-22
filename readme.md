@@ -1,5 +1,7 @@
-# PatternGen
-> 将生成的特征码空格去掉，另将??更改为*
+﻿# PatternGen
+> 支持 ida 9.0 （python3 建议 python3.11）, 低版本没有验证过,需要您自己验证<br>
+> 将生成的特征码中的空格去掉，另将??更改为*<br>
+> ida 特征码提取 火哥用的版本 （python 2.7 版本） 在此链接 https://github.com/hackflame/ida_python_extractCode<br>
 > ida sig pattern generate pulgin<br>
 > copy on plugins directory<br>
 > shortcut key **alt+z**<br>
