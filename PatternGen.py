@@ -77,7 +77,7 @@ class PatternGen_Plugin_t(idaapi.plugin_t):
         print (25 * "===")
 
     def formatByte(self,ea):
-        return " "+"{:02X}".format(idc.get_wide_byte(ea))
+        return ""+"{:02X}".format(idc.get_wide_byte(ea))
 
     def calcStr(self,ea, endcount):
         hstr = ""
@@ -85,7 +85,7 @@ class PatternGen_Plugin_t(idaapi.plugin_t):
         hstr += self.formatByte(ea)
         hstr = hstr + self.formatByte(ea + 1) if (firstByte == "FF" or firstByte == "66" or firstByte == "67") else hstr
         #print(math.ceil(endcount - len(hstr) / 2))
-        hstr = hstr + math.ceil(endcount - len(hstr) / 2) * " ??" if endcount >= 2 else hstr
+        hstr = hstr + math.ceil(endcount - len(hstr) / 2) * "*" if endcount >= 2 else hstr
         return hstr
 
     def extractCode(self):
@@ -110,7 +110,7 @@ class PatternGen_Plugin_t(idaapi.plugin_t):
                     op1 == idc.o_displ and op2 == idc.o_imm):
                 result += self.formatByte(ea) + self.formatByte(ea + 1)
                 for b in range(2, instructionSize):
-                    result = result + " ??"
+                    result = result + "*"
             elif op1 == idc.o_phrase and op2 == idc.o_reg:
                 for b in range(0, instructionSize):
                     result += self.formatByte(ea + b)
