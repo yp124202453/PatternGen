@@ -1,4 +1,5 @@
 # PatternGen
+> 将生成的特征码空格去掉，另将??更改为*
 > ida sig pattern generate pulgin<br>
 > copy on plugins directory<br>
 > shortcut key **alt+z**<br>
